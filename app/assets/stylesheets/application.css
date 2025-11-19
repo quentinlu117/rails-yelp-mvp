@@ -13,3 +13,16 @@
  *= require_tree .
  *= require_self
  */
+p, h3 {
+  margin: 0;
+}
+ul {
+  padding: 0;
+}
+a {
+  text-decoration: none;
+}
+
+a > .card:hover {
+  background-color: var(--bs-primary-bg-subtle)!important;
+}

@@ -1,0 +1,13 @@
+<div class="container d-flex justify-content-center">
+  <div class="d-flex flex-column gap-2 col-12 col-lg-10">
+
+    <h1 class="my-3 my-md-5">Tous les Restaurants</h1>
+
+    <ul class="row row-cols-3 list-unstyled">
+      <% @restaurants.each do |restaurant| %>
+        <%= render "card", restaurant: restaurant %>
+      <% end %>
+    </ul>
+
+  </div>
+</div>

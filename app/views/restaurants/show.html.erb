@@ -1,0 +1,39 @@
+<div class="container d-flex justify-content-center">
+  <div class="d-flex flex-column gap-4 col-12 col-lg-10 py-4 p-md-5">
+    <div>
+      <%= link_to root_path, class: "btn btn-primary" do %>
+        <i class="ph-bold ph-arrow-left"></i>
+        Back
+      <% end %>
+    </div>
+
+    <div class="card">
+      <div class="card-body">
+        <div class="d-flex flex-row align-items-start">
+          <h2 class="flex-grow-1"><%= @restaurant.name %></h2>
+          <span class="badge rounded-pill text-bg-light bg-secondary-subtle fs-6"><%= @restaurant.category %></span>
+        </div>
+        <p class="text-secondary"><%= @restaurant.address %></p>
+        <p class="text-primary"><%= @restaurant.phone_number %></p>
+      </div>
+    </div>
+
+    <div>
+      <h3 class="mb-3">All reviews:</h3>
+
+      <ul class="list-unstyled">
+        <% @restaurant.reviews.each do |review| %>
+          <%= render "reviews/review", review: review %>
+        <% end %>
+      </ul>
+
+      <h3 class="mb-3">Déposer un nouvel avis</h3>
+        <%= simple_form_for [@restaurant, @review] do |f| %>
+          <%= f.input :rating, collection: 0..5 %>
+          <%= f.input :content %>
+          <%= f.submit class: "btn btn-dark" %>
+        <% end %>
+    </div>
+
+  </div>
+</div>

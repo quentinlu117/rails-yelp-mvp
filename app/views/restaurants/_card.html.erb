@@ -1,0 +1,21 @@
+<li class="p-2 col-12 col-lg-4">
+  <%= link_to restaurant_path(restaurant) do %>
+    <div class="card">
+      <div class="card-body">
+
+        <div class="d-flex flex-row align-items-start">
+          <p class="flex-grow-1"><strong><%= restaurant.name %></strong></p>
+          <span class="badge rounded-pill text-bg-light bg-secondary-subtle"><%= restaurant.category %></span>
+        </div>
+        <p class="text-secondary"><%= restaurant.address %></p>
+        <p class="text-primary"><%= restaurant.phone_number %></p>
+        <p class="badge text-bg-warning fs-6">
+          <i class="ph-bold ph-star"></i>
+          <%= restaurant.average %>
+          <small> / 5</small>
+        </p>
+
+      </div>
+    </div>
+<% end %>
+</li>
